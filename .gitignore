@@ -1,3 +1,4 @@
 .python-version
 .idea
 docker/mongo-volume
+*_pycache__*
