@@ -1,19 +1,27 @@
 from flask import Flask
-from flask_mongoengine import MongoEngine
+from star_wars_planet.extensions import configuration
 
-app = Flask(__name__)
 
-app.config["SECRET_KEY"] = "flask+mongoengine=<3"
-app.config['MONGODB_SETTINGS'] = {
-    'db': 'star_wars_planets',
-    'username': 'skywalker',
-    'password': 'skywalker',
-    'authentication_source': 'admin'
-}
+def minimal_app(**config) -> object:
+    """
+    Creates a basic Flask application
 
-db = MongoEngine(app)
+    :param config:
+    :return: Flask object
+    """
+    app = Flask(__name__)
+    configuration.init_app(app, **config)
+    return app
 
-from .routes import blueprint
-app.register_blueprint(blueprint, url_prefix='/api/v1')
 
+def create_app(**config) -> object:
+    """
+    Create a Flask application with all settings specified in settings.toml
+
+    :param config:
+    :return: Flask object
+    """
+    app = minimal_app(**config)
+    configuration.load_extensions(app)
+    return app
 

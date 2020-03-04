@@ -7,6 +7,10 @@ db.createUser(
                 {
                     role: "readWrite",
                     db: "star_wars_planets"
+                },
+                {
+                    role: "readWrite",
+                    db: "star_wars_planets_test"
                 }
             ]
     }

@@ -1,0 +1,27 @@
+[default]
+DEBUG = true
+SECRET_KEY = "d95b2734702ca5e47152e6f41bab4ad859a60d397f912da2"
+
+MONGODB_SETTINGS.host = 'database'
+MONGODB_SETTINGS.db = 'star_wars_planets'
+MONGODB_SETTINGS.username = 'skywalker'
+MONGODB_SETTINGS.password = 'skywalker'
+MONGODB_SETTINGS.authentication_source = 'admin'
+
+EXTENSIONS = [
+    "star_wars_planet.extensions.database",
+    "star_wars_planet.extensions.commands",
+    "star_wars_planet.blueprints.api"
+]
+
+URI_SWAPI = "https://swapi.co/api"
+
+
+[testing]
+MONGODB_SETTINGS.host = 'localhost'
+MONGODB_SETTINGS.db = 'star_wars_planets_dev'
+MONGODB_SETTINGS.username = 'skywalker'
+MONGODB_SETTINGS.password = 'skywalker'
+MONGODB_SETTINGS.authentication_source = 'admin'
+
+
