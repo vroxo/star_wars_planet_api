@@ -41,7 +41,7 @@ If you want to clear the existing data in the database, use:
 
 Run tests:
 
-`$ pytest src/tests`
+`$ pytest star_wars_planet/tests`
 
 ## API
 
