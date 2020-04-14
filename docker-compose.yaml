@@ -2,14 +2,16 @@ version: '3.7'
 services:
   web:
     container_name: star_wars_api
-    build: ../.
+    build:
+      dockerfile: Dockerfile.dev
+      context: .
     command: flask run -h 0.0.0.0
     volumes:
-      - ../.:/usr/src/app/
+      - .:/usr/src/app/
     ports:
       - 5000:5000
     env_file:
-      - ../.env
+      - ./.env
     depends_on:
       - mongo_db
 
@@ -22,6 +24,6 @@ services:
       - MONGO_INITDB_ROOT_PASSWORD=skywalker
     volumes:
       - ./init-mongo.js:/docker-entrypoint-initdb.d/init-mongo.js:ro
-      - ../mongo-volume:/data/db
+      - ./mongo-volume:/data/db
     ports:
       - '27017-27019:27017-27019'

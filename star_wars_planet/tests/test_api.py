@@ -58,7 +58,10 @@ def test_planets_get_by_name(client, planets):
         assert str(planet.id) in [str(item["id"]) for item in response.json]
 
 
-def test_post_planet(client, json_valid):
+def test_post_planet(client, json_valid, mocker):
+    mocker.patch("star_wars_planet.services.SWAPIService.count_films_by_planet_name",
+                 return_value=dict(status_code=200, result=dict(planet_name='ValidPlanet', count_films=2)))
+
     response = client.post('/api/v1/planets/', json=json_valid)
     assert response.status_code == 201
     assert response.json == {'message': f"Planet {json_valid['name']} created!"}
