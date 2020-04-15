@@ -5,4 +5,4 @@ services:
 
 before_install:
   - docker-compose up -d --build
-
+  - docker exec -t star_wars_planets pytest /usr/src/app/star_wars_planet/tests

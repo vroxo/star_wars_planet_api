@@ -1,20 +1,5 @@
 version: '3.7'
 services:
-  web:
-    container_name: star_wars_api
-    build:
-      dockerfile: Dockerfile.dev
-      context: .
-    command: flask run -h 0.0.0.0
-    volumes:
-      - .:/usr/src/app/
-    ports:
-      - 5000:5000
-    env_file:
-      - ./.env
-    depends_on:
-      - mongo_db
-
   mongo_db:
     image: mongo:latest
     container_name: database
@@ -27,3 +12,24 @@ services:
       - ./mongo-volume:/data/db
     ports:
       - '27017-27019:27017-27019'
+    networks:
+      - star-wars
+  web:
+    container_name: star_wars_planets
+    build:
+      dockerfile: Dockerfile.dev
+      context: .
+    command: flask run -h 0.0.0.0
+    volumes:
+      - .:/usr/src/app/
+    ports:
+      - 5000:5000
+    env_file:
+      - ./.env
+    depends_on:
+      - mongo_db
+    networks:
+      - star-wars
+
+networks:
+  star-wars:

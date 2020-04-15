@@ -18,10 +18,9 @@ URI_SWAPI = "https://swapi.co/api"
 
 
 [testing]
-MONGODB_SETTINGS.host = 'localhost'
-MONGODB_SETTINGS.db = 'star_wars_planets_dev'
-MONGODB_SETTINGS.username = 'skywalker'
-MONGODB_SETTINGS.password = 'skywalker'
-MONGODB_SETTINGS.authentication_source = 'admin'
+MONGODB_SETTINGS.host = 'mongomock://localhost'
+MONGODB_SETTINGS.db = 'test'
+
+
 
 
