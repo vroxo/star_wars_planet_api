@@ -1,6 +1,8 @@
 # STAR WARS PLANET API
 ## CLONE
 
+[![Build Status](https://travis-ci.com/vroxo/star_wars_planet_api.svg?branch=master)](https://travis-ci.com/vroxo/star_wars_planet_api)
+
 `$ git clone git@github.com:vroxo/star_wars_planet_api.git`
 
 or 
