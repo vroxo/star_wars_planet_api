@@ -97,7 +97,3 @@ def test_delete_planet_with_invalid_id(client):
 def test_invalid_url(client):
     response = client.delete('/invalid//api/v1/planets/')
     assert response.status_code == 404
-
-
-def test_fail():
-    assert False
