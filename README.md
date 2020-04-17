@@ -1,5 +1,5 @@
 # STAR WARS PLANET API
-[![Build Status](https://travis-ci.com/vroxo/star_wars_planet_api.svg?branch=master)](https://travis-ci.com/vroxo/star_wars_planet_api)
+[![Build Status](https://travis-ci.com/vroxo/star_wars_planet_api.svg?branch=master)](https://travis-ci.com/vroxo/star_wars_planet_api)  ![CI](https://github.com/vroxo/star_wars_planet_api/workflows/CI/badge.svg)
 
 ## CLONE
 
